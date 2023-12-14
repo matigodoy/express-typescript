@@ -1,12 +1,12 @@
 package-lock.json
 
 # Node modules folder
-node_modules
+/node_modules
 
 # .vscode folder
 .vscode
-.vs
+/.vs
 
 # Compiled files
-build
+/build
 
