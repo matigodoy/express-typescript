@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "date": "2017-01-01",
+    "weather": "windy",
+    "visibility": "good",
+    "comment": "todo piola"
+  },
+
+  {
+    "id": 2,
+    "date": "2017-01-02",
+    "weather": "windy",
+    "visibility": "good",
+    "comment": "todo piola"
+  }
+]

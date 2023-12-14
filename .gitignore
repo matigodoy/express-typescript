@@ -1,0 +1,12 @@
+package-lock.json
+
+# Node modules folder
+node_modules
+
+# .vscode folder
+.vscode
+.vs
+
+# Compiled files
+build
+
