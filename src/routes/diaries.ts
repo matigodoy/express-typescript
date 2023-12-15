@@ -1,16 +1,32 @@
 import express from 'express' // ESModules
 import * as diaryServices from '../services/diaryServices'
+import { toNewDiaryEntry } from '../utils'
 // const express = require('express') // CommonJS
 
 const router = express.Router()
+
+router.get('/', (_req, res) => {
+    res.send(diaryServices.getEntriesNonSensitive
+        ())
+})
 
 router.get('/:id', (req, res) => {
     const diary = diaryServices.findById(Number(req.params.id))
     return diary ? res.send(diary) : res.sendStatus(404)
 })
 
-router.post('/', (_req, res) => {
-    res.send('creating diary')
+router.post('/', (req, res) => {
+    try {
+
+        const newDiaryEntry = toNewDiaryEntry(req.body);
+
+        const addedDiaryEntry = diaryServices.addEntry(newDiaryEntry);
+        console.log(addedDiaryEntry);
+        res.json(addedDiaryEntry);
+    }
+    catch (e: any) {
+        res.status(400).send(e.message);
+    }
 })
 
 export default router
